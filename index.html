@@ -1,170 +1,220 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Shirley Morales</title>
+<title>Shirley Morales | Software Developer & DevOps</title>
+<meta name="description" content="Desarrollo software con Python y lo llevo a producción con pipelines CI/CD, Azure DevOps y SonarQube. Disponible para proyectos freelance.">
 
 <link rel="stylesheet" href="src/css/styles.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+<style>
+/* Estilos nuevos del inicio. Usan prefijo "h-" para no chocar con .card, .tech, etc. de styles.css */
+.hero-section .description{ max-width:520px; }
+.h-sub{ font-size:15px; color:#555; margin-bottom:12px; font-weight:500; }
+
+/* Experiencia actual */
+.h-now{
+  display:flex; flex-wrap:wrap; gap:14px 40px; justify-content:center; align-items:center;
+  padding:28px 80px; background:#f0edfbaa; text-align:center; color:#444; font-size:15px;
+}
+.h-now strong{ color:#d36596; }
+
+/* Servicios */
+.h-services{ padding:80px; background:#f8f9fc; }
+.h-services h2, .h-stack h2{
+  text-align:center; margin-bottom:8px; font-size:30px;
+  background:linear-gradient(90deg,#ee89ba,#ad90ec);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+}
+.h-lead{ text-align:center; color:#666; max-width:560px; margin:0 auto 40px; line-height:1.6; }
+.h-svc-grid{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px; max-width:1000px; margin:0 auto;
+}
+.h-svc{
+  background:white; border-radius:16px; padding:32px;
+  border:1px solid #ffd1e6; box-shadow:0 10px 25px rgba(0,0,0,0.06);
+}
+.h-svc.devops{ border-color:#d9cdf7; }
+.h-svc i{
+  width:46px; height:46px; display:inline-flex; align-items:center; justify-content:center;
+  border-radius:12px; background:#F8E3F2; color:#E8296A; font-size:20px; margin-bottom:16px;
+}
+.h-svc.devops i{ background:#ece6fb; color:#8a63e0; }
+.h-svc h3{ font-size:20px; margin-bottom:10px; color:#2b2b2b; }
+.h-svc p{ color:#555; line-height:1.6; margin-bottom:16px; font-size:15px; }
+.h-svc ul{ list-style:none; }
+.h-svc li{ color:#444; font-size:14px; padding:6px 0; border-top:1px solid #f3e4ee; }
+.h-svc.devops li{ border-top-color:#ebe6f8; }
+
+/* Stack en dos grupos */
+.h-stack{ padding:60px 20px; background:#f6e6f6a4; text-align:center; }
+.h-group{ margin-top:28px; }
+.h-group h3{ font-size:14px; color:#666; font-weight:500; margin-bottom:14px; }
+.h-stack .tech-list{ margin-bottom:0; }
+
+/* Llamada final */
+.h-cta{
+  max-width:760px; margin:70px auto; padding:40px; text-align:center;
+  border-radius:20px; border:1px solid #ffb3d1;
+  background:linear-gradient(135deg,#ffe6f2,#eef5ff);
+}
+.h-cta h2{ color:#d36596; margin-bottom:10px; }
+.h-cta p{ color:#555; margin-bottom:24px; line-height:1.6; }
+.h-cta .buttons{ justify-content:center; margin-bottom:0; flex-wrap:wrap; }
+.btn-outline{ text-decoration:none; display:inline-block; }
+
+.h-footer{ text-align:center; padding:24px; color:#888; font-size:13px; }
+
+a:focus-visible, .social:focus-visible{ outline:3px solid #ad90ec; outline-offset:3px; }
+
+@media (max-width:768px){
+  .navbar{ flex-direction:column; gap:10px; padding:12px 20px; }
+  .menu{ flex-wrap:wrap; justify-content:center; gap:16px; padding:0; }
+  .hero-section{ padding:40px 20px; }
+  .hero{ flex-direction:column-reverse; gap:30px; }
+  .hero-image img{ width:100%; max-width:320px; }
+  .title{ font-size:36px; }
+  .h-now{ padding:24px 20px; }
+  .h-services{ padding:50px 20px; }
+  .h-cta{ margin:40px 20px; padding:28px 20px; }
+}
+</style>
 </head>
 
 <body>
 
-
 <!-- NAVBAR -->
-
 <nav class="navbar">
-
-<div class="logo">&lt;/&gt; Shirley Morales</div>
-
-<ul class="menu">
-<li><a href="index.html">Inicio</a></li>
-<li><a href="perfil.html">Perfil</a></li>
-<li><a href="proyectos.html">Proyectos</a></li>
-<li><a href="habilidades.html">Habilidades</a></li>
-<li><a href="contacto.html">Contacto</a></li>
-</ul>
-
+  <div class="logo">&lt;/&gt; Shirley Morales</div>
+  <ul class="menu">
+    <li><a class="active" href="index.html">Inicio</a></li>
+    <li><a href="perfil.html">Perfil</a></li>
+    <li><a href="proyectos.html">Proyectos</a></li>
+    <li><a href="habilidades.html">Habilidades</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
 </nav>
 
-
-
 <!-- HERO -->
-
 <section class="hero-section">
+  <div class="hero">
 
-<div class="hero">
+    <div class="hero-text">
+      <div class="status"><span class="dot"></span> Disponible para proyectos freelance y nuevas oportunidades</div>
 
-<div class="hero-text">
+      <h1 class="title">
+        Software Developer<br>
+        <span class="gradient">&amp; DevOps</span>
+      </h1>
 
-<div class="status">
-<span class="dot"></span>
-Disponible para oportunidades
-</div>
+      <p class="h-sub">Código que funciona y pipelines que lo llevan a producción.</p>
 
-<h1 class="title">
-    Backend Developer | <br>
-<span class="gradient"> Python & APIs </span>
-</h1>
-<p class="liga">Creación de sistemas backend escalables</p>
+      <p class="description">
+        Desarrollo aplicaciones y APIs con Python, Django y FastAPI, y automatizo su entrega con
+        pipelines CI/CD en Azure DevOps, control de calidad con SonarQube y contenedores con Docker.
+      </p>
 
+      <div class="buttons">
+        <a class="btn-primary" href="contacto.html">Cuéntame tu proyecto</a>
+        <a class="btn-outline" href="proyectos.html">Ver proyectos</a>
+      </div>
 
-<p class="description">
+      <div class="socials">
+        <a class="social github" href="https://github.com/Jannin2" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a class="social linkedin" href="https://www.linkedin.com/in/jannin-morales/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a class="social email" href="mailto:janninmorales8@gmail.com" aria-label="Correo"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
 
-    Especializada en desarrollo backend con Python, Django y FastAPI. 
-    Construyo APIs y sistemas escalables enfocados en rendimiento, manejo de datos y arquitectura limpia. 
-    Experiencia en visión por computadora y procesamiento en tiempo real.
+    <div class="hero-image">
+      <img src="images/profile.jpg" alt="Foto de Shirley Morales">
+    </div>
 
-</p>
-
-<div class="buttons">
-
-<a class="btn-primary" href="proyectos.html">
-Ver Proyectos →
-</a>
-
-
-
-</div>
-
-
-<div class="socials">
-
-<a href="https://github.com/Jannin2" class="social github">
-<i class="fa-brands fa-github"></i>
-</a>
-
-<a href="https://www.linkedin.com/in/jannin-morales/" class="social linkedin">
-<i class="fa-brands fa-linkedin-in"></i>
-</a>
-
-<a href="mailto:janninmorales8@gmail.com" class="social email">
-<i class="fa-solid fa-envelope"></i>
-</a>
-
-</div>
-
-</div>
-
-
-
-<div class="hero-image">
-
-<img src="images/profile.jpg">
-
-</div>
-
-</div>
-
+  </div>
 </section>
 
-
-
-<!-- STATS -->
-
-<section class="stats-section">
-
-<div class="cards">
-
-<div class="card">
-<i class="fa-solid fa-briefcase"></i>
-<h2>3+</h2>
-<p>Proyectos Completados</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-award"></i>
-<h2>4+</h2>
-<p>Tecnologías Dominadas</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-graduation-cap"></i>
-<h2>2+</h2>
-<p>Experiencia en proyectos reales</p>
-</div>
-
-
-
-</div>
-
+<!-- EXPERIENCIA ACTUAL -->
+<section class="h-now">
+  <span><i class="fa-solid fa-briefcase"></i> <strong>Analista DevOps</strong> en Periferia IT Group</span>
+  <span>5+ meses de experiencia profesional · desde jun. 2026</span>
+  <span>Ingeniería de Software, Ibero (2022 - 2026)</span>
 </section>
 
+<!-- SERVICIOS -->
+<section class="h-services">
+  <h2>Cómo puedo ayudarte</h2>
+  <p class="h-lead">Puedo encargarme de construir tu aplicación, de automatizar cómo se prueba y se publica, o de las dos cosas.</p>
 
+  <div class="h-svc-grid">
+    <article class="h-svc">
+      <i class="fa-solid fa-code"></i>
+      <h3>Desarrollo de software</h3>
+      <p>APIs, sistemas y automatizaciones a la medida, con lógica de negocio clara y fácil de mantener.</p>
+      <ul>
+        <li>APIs REST con Python, Django y FastAPI</li>
+        <li>Bases de datos SQL y MySQL</li>
+        <li>Sitios web con HTML, CSS y JavaScript</li>
+      </ul>
+    </article>
+
+    <article class="h-svc devops">
+      <i class="fa-solid fa-gears"></i>
+      <h3>DevOps y calidad de código</h3>
+      <p>Pipelines que compilan, prueban y publican tu proyecto sin pasos manuales, con revisión de calidad en cada cambio.</p>
+      <ul>
+        <li>Pipelines CI/CD en Azure DevOps</li>
+        <li>Análisis de calidad y seguridad con SonarQube</li>
+        <li>Contenedores con Docker y control de versiones con Git</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
 <!-- STACK -->
+<section class="h-stack">
+  <h2>Tecnologías</h2>
 
-<section class="stack-section">
+  <div class="h-group">
+    <h3>Desarrollo</h3>
+    <div class="tech-list">
+      <span class="tech">Python</span>
+      <span class="tech">FastAPI</span>
+      <span class="tech">Django</span>
+      <span class="tech">SQL / MySQL</span>
+      <span class="tech">JavaScript</span>
+    </div>
+  </div>
 
-<h2 class="stack-title">
-Stack Tecnológico Principal
-</h2>
-
-<div class="tech-list">
-
-<div class="tech">Python</div>
-<div class="tech">FastAPI</div>
-<div class="tech">Django</div>
-<div class="tech">MySQL</div>
-<div class="tech">Docker</div>
-<div class="tech">Git</div>
-
-</div>
-
+  <div class="h-group">
+    <h3>DevOps y calidad</h3>
+    <div class="tech-list">
+      <span class="tech">Azure DevOps</span>
+      <span class="tech">CI/CD</span>
+      <span class="tech">SonarQube</span>
+      <span class="tech">Docker</span>
+      <span class="tech">Git</span>
+    </div>
+  </div>
 </section>
 
+<!-- LLAMADA FINAL -->
+<section class="h-cta">
+  <h2>¿Tienes un proyecto en mente?</h2>
+  <p>Cuéntame qué necesitas y te respondo con una propuesta. También estoy abierta a vacantes de desarrollo o DevOps.</p>
+  <div class="buttons">
+    <a class="btn-primary" href="mailto:janninmorales8@gmail.com">Escríbeme por correo</a>
+    <a class="btn-outline" href="contacto.html">Ver otras formas de contacto</a>
+  </div>
+</section>
 
+<footer class="h-footer">© 2026 Shirley Morales</footer>
 
 <script src="js/script.js"></script>
 
